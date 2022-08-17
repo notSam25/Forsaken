@@ -6,15 +6,10 @@ import Forsaken.Util.MouseListener;
 
 import javax.swing.*;
 import java.awt.*;
-import java.security.Key;
 
 public class Window extends JFrame {
 
-    // Input handlers
-    protected static KeyboardListener keyboardListener = new KeyboardListener();
-    protected static MouseListener mouseListener = new MouseListener();
-
-    private static Render render = new Render();
+    private static final Render render = new Render();
     public void initWindow() {
         Dimension screenDim = Toolkit.getDefaultToolkit().getScreenSize();
         render.setPreferredSize(new Dimension(600, 600));
@@ -29,7 +24,7 @@ public class Window extends JFrame {
         this.setLocation(new Point(100, 100));
         this.setVisible(true);
 
-        this.addMouseListener(mouseListener.getListener());
-        this.addKeyListener(keyboardListener.getListener());
+        this.addMouseListener(MouseListener.getListener());
+        this.addKeyListener(KeyboardListener.getListener());
     }
 }
