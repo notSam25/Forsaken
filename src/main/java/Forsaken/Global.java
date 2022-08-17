@@ -19,7 +19,7 @@ public class Global {
     public static final int screenHeight = maxScreenRow * tileSize;
 
     // Render vars
-    public static final int targetTPS = 60;
+    public static final int targetTPS = 64;
 
     // Level data
     protected static StartScreen startScreen = new StartScreen();
