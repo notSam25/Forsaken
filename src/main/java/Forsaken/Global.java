@@ -22,8 +22,27 @@ public class Global {
     public static final int targetTPS = 64;
 
     // Level data
+    public enum GameStates {
+        STARTMENU,
+        GAME
+    }
     protected static StartScreen startScreen = new StartScreen();
-    public static GameState gameState = startScreen;
+    public static GameStates currentState;
+    public static GameState gameState;
     public static boolean closeGame = false;
+
+    public static void setGameState(GameStates state) {
+        switch (state) {
+            case STARTMENU: {
+                gameState = startScreen;
+            }
+            case GAME: {
+
+            }
+        }
+
+        currentState = state;
+        gameState.initialize();
+    }
 
 }

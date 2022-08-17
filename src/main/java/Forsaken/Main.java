@@ -5,6 +5,9 @@ public class Main implements Runnable {
 
         System.out.println("Welcome to Forsaken!");
 
+        // Set the starting gameState
+        Global.setGameState(Global.GameStates.STARTMENU);
+
         // Start our runnable instance
         new Thread(new Main()).start();
 

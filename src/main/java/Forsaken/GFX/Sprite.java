@@ -6,19 +6,22 @@ import javax.swing.ImageIcon;
 public class Sprite {
     // X, Y, Width, Height
     public Rectangle pos;
-    public static Image image;
+    public Image image;
+    public ImageIcon imageIcon;
 
     public Sprite() {}
     public Sprite(Rectangle _pos, ImageIcon imageIcon) {
-        pos = _pos;
+        this.pos = _pos;
         setImage(imageIcon);
     }
 
-    public static void setImage(ImageIcon imageIcon) {
-        image = imageIcon.getImage();
+    public void setImage(ImageIcon imageIcon) {
+        this.imageIcon = imageIcon;
+        this.image = imageIcon.getImage();
     }
 
     public Image getImage() {
-        return image;
+        return this.image;
     }
+    public ImageIcon getImageIcon(){ return this.imageIcon; }
 }
