@@ -11,8 +11,7 @@ public class Window extends JFrame {
 
     private static final Render render = new Render();
     public void initWindow() {
-        Dimension screenDim = Toolkit.getDefaultToolkit().getScreenSize();
-        render.setPreferredSize(new Dimension(600, 600));
+        render.setPreferredSize(new Dimension(Global.screenWidth, Global.screenHeight));
         render.setDoubleBuffered(true);
 
         this.setTitle(Global.windowName);
@@ -21,7 +20,7 @@ public class Window extends JFrame {
 
         this.add(render);
         this.pack();
-        this.setLocation(new Point(100, 100));
+        this.setLocation(new Point(Global.screenResolution.width / 4, Global.screenResolution.height / 4));
         this.setVisible(true);
 
         this.addMouseListener(MouseListener.getListener());
