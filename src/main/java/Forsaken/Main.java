@@ -15,7 +15,7 @@ public class Main implements Runnable {
     @Override
     public void run() {
         try {
-
+            Global.window.gameLoop();
         } catch (Exception e) {
             e.printStackTrace();
             System.exit(1);

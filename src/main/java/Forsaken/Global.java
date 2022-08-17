@@ -9,7 +9,12 @@ public class Global {
     public static final String windowName = "Forsaken";
     public static Window window = new Window();
 
+    // Render vars
+    public static final int targetTPS = 60;
+
     // Level data
     protected static StartScreen startScreen = new StartScreen();
     public static GameState gameState = startScreen;
+    public static boolean closeGame = false;
+
 }

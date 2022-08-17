@@ -13,7 +13,7 @@ public class MouseListener {
         }
     }
 
-    public static void Update() {
+    public static void update() {
         for (Button button : buttons) {
             button.pressed = button.down && !button.last;
             button.last = button.down;

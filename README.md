@@ -1,2 +1,2 @@
 # Forsaken
-> A 2D java game made to furthor my knowledge in java
+> A 2D java game made to further my knowledge in java

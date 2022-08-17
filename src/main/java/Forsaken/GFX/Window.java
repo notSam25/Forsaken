@@ -27,4 +27,43 @@ public class Window extends JFrame {
         this.addMouseListener(MouseListener.getListener());
         this.addKeyListener(KeyboardListener.getListener());
     }
+
+    public void gameLoop() {
+
+        double interval = (double)(1000000000 / Global.targetTPS), nextDrawTime = interval + System.nanoTime(); // TPS in NS
+        double now = System.nanoTime();
+        int TPS = 0;
+        while(!Global.closeGame) {
+
+            // Input handler updates
+            KeyboardListener.update();
+            MouseListener.update();
+
+            // Call current level update/tick
+            Global.gameState.update();
+
+            // Draw screen
+            render.repaint();
+
+            try {
+                double remainder = nextDrawTime - System.nanoTime();
+                remainder = remainder / 1000000000;
+                TPS++;
+
+                if(remainder < 0)
+                    remainder = 0;
+
+                if(System.nanoTime() >= now + 1000000000) {
+                    System.out.println("TPS: " + TPS);
+                    TPS = 0;
+                    now = System.nanoTime();
+                }
+
+                Thread.sleep((long)remainder);
+                nextDrawTime += interval;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

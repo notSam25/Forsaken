@@ -33,7 +33,7 @@ public class KeyboardListener {
         };
     }
 
-    public static void Update() {
+    public static void update() {
         for (Key key : keys) {
             key.pressed = key.down && !key.last;
             key.last = key.down;
