@@ -3,7 +3,6 @@ package Forsaken.Levels;
 import Forsaken.GameState;
 
 public class StartScreen implements GameState {
-
     @Override
     public void update() {
 

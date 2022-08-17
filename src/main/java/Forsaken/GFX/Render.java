@@ -21,24 +21,24 @@ public class Render extends JPanel {
 
         for(Object object : objects) {
             switch(object.type) {
-                case NONE -> {
+                case NONE: {
                     System.out.println("Invalid object at: " + object);
-                }
-                case STRING -> {
+                } break;
+                case STRING: {
                     g.setFont(object.font);
                     g.drawString(object.text, object.position.x, object.position.y);
                 }
-                case RECT -> {
+                case RECT: {
                     g.drawRect(object.position.x, object.position.y,object.position.width, object.position.height);
-                }
-                case FILLRECT -> {
+                } break;
+                case FILLRECT: {
                     g.setColor(object.color);
                     g.drawRect(object.position.x, object.position.y,object.position.width, object.position.height);
-                }
-                case LINE -> {
+                } break;
+                case LINE: {
                     g.setColor(object.color);
                     g.drawLine(object.position.x, object.position.y,object.position.width, object.position.height);
-                }
+                } break;
             }
         }
 

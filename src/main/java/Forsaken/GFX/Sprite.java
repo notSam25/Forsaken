@@ -8,11 +8,11 @@ public class Sprite {
     public Rectangle pos;
     public static Image image;
 
-    public Sprite() {};
+    public Sprite() {}
     public Sprite(Rectangle _pos, ImageIcon imageIcon) {
         pos = _pos;
         setImage(imageIcon);
-    };
+    }
 
     public static void setImage(ImageIcon imageIcon) {
         image = imageIcon.getImage();

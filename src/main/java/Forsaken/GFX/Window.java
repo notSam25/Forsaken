@@ -9,7 +9,7 @@ import java.awt.*;
 
 public class Window extends JFrame {
 
-    private static final Render render = new Render();
+    public static final Render render = new Render();
     public void initWindow() {
         render.setPreferredSize(new Dimension(Global.screenWidth, Global.screenHeight));
         render.setDoubleBuffered(true);
@@ -29,7 +29,7 @@ public class Window extends JFrame {
 
     public void gameLoop() {
 
-        double interval = (double)(1000000000 / Global.targetTPS), nextDrawTime = interval + System.nanoTime(); // TPS in NS
+        double interval = (double) 1000000000 / (double)Global.targetTPS, nextDrawTime = interval + System.nanoTime(); // TPS in NS
         double now = System.nanoTime();
         int TPS = 0;
         while(!Global.closeGame) {
