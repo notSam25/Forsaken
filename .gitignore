@@ -1,2 +1,3 @@
 bin
-/build/
+build
+.gradle/7.4
