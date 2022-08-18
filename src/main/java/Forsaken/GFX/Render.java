@@ -10,7 +10,7 @@ public class Render extends JPanel {
 
     // Draw data
     public static Vector<Sprite> sprites = new Vector<>();
-    public static Vector<Object> objects = new Vector<>();
+    public static Vector<Geometry> objects = new Vector<>();
 
     @Override
     public void paintComponent(Graphics g) {
@@ -19,7 +19,7 @@ public class Render extends JPanel {
         // Gather all render data for the current level
         Global.gameState.render();
 
-        for(Object object : objects) {
+        for(Geometry object : objects) {
             switch(object.type) {
                 case NONE: {
                     System.out.println("Invalid object at: " + object);
