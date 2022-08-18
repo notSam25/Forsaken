@@ -43,7 +43,7 @@ public class Render extends JPanel {
         }
 
         for (Sprite sprite : sprites) {
-            g.drawImage(sprite.getImage(), sprite.pos.x, sprite.pos.y, sprite.pos.width, sprite.pos.height, null);
+            g.drawImage(sprite.getImage(), sprite.transform.x, sprite.transform.y, sprite.transform.width, sprite.transform.height, null);
         }
 
         // Cleanup

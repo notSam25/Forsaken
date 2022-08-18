@@ -34,6 +34,7 @@ public class Window extends JFrame {
         int TPS = 0;
         while(!Global.closeGame) {
 
+            //System.out.println("frame start");
             // Input handler updates
             KeyboardListener.update();
             MouseListener.update();
@@ -43,6 +44,8 @@ public class Window extends JFrame {
 
             // Draw screen
             render.repaint();
+
+            //System.out.println("frame end");
 
             try {
                 double remainder = nextDrawTime - System.nanoTime();
