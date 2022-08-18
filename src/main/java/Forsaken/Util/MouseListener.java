@@ -4,7 +4,11 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class MouseListener {
-
+    public enum  MouseButton {
+        MOUSE_LEFT,
+        MOUSE_MIDDLE,
+        MOUSE_RIGHT
+    }
     public static final Button[] buttons = new Button[3];
 
     static {
@@ -41,7 +45,6 @@ public class MouseListener {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                System.out.println("mouse pressed " + e.getButton());
                 MouseListener.buttons[e.getButton() - 1].down = true;
             }
 

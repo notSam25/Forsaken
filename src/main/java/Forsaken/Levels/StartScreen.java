@@ -22,7 +22,7 @@ public class StartScreen implements GameState {
     @Override
     public void update() {
         if(uiButton.isPressed()) {
-            System.out.println("button press");
+            System.out.println("Button has been pressed");
         }
     }
 

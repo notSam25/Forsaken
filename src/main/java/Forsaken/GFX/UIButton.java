@@ -18,9 +18,9 @@ public class UIButton extends UIObject {
 
     @Override
     public boolean isPressed() {
-        boolean mouseDown = MouseListener.buttons[MouseEvent.BUTTON1].down;
+        boolean mouseDown = MouseListener.buttons[MouseListener.MouseButton.MOUSE_LEFT.ordinal()].pressed;
         if(mouseDown) {
-            System.out.println("Mouse Down!!!");
+            System.out.println("Mouse position: " + MouseListener.getMousePosition() + " Rect bounds: " + sprite.transform);
         }
         return mouseDown && sprite.transform.contains(MouseListener.getMousePosition());
     }
