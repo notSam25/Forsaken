@@ -4,6 +4,7 @@ import Forsaken.GFX.Render;
 import Forsaken.GFX.Sprite;
 import Forsaken.GameState;
 import Forsaken.Global;
+import Forsaken.Util.KeyboardListener;
 
 import javax.swing.*;
 import java.awt.*;

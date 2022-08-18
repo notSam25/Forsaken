@@ -41,7 +41,7 @@ public class KeyboardListener {
     }
 
     public static class Key {
-        public boolean down, pressed, pressedTick, last;
+        public boolean down, pressed, last;
     }
 
     public static int GetKey(char key) {

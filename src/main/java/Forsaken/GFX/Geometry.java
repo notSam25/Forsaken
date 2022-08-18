@@ -2,7 +2,7 @@ package Forsaken.GFX;
 
 import java.awt.*;
 
-public class Object {
+public class Geometry {
     public enum ObjetType {
         NONE,
         STRING,
