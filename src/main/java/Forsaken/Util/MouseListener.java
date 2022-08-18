@@ -1,5 +1,8 @@
 package Forsaken.Util;
 
+import Forsaken.Global;
+
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -18,8 +21,14 @@ public class MouseListener {
     }
 
     private static Point mousePosition;
-    public static Point getMousePosition() {
+    public static Point getMouseScreenPosition() {
         return mousePosition;
+    }
+
+    public static Point getMouseWindowPosition() {
+        Point mousePos = mousePosition;
+        SwingUtilities.convertPointFromScreen(mousePos, Global.window);
+        return mousePos;
     }
 
     public static void update() {

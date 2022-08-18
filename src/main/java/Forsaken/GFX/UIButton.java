@@ -1,8 +1,9 @@
 package Forsaken.GFX;
 
+import Forsaken.Global;
 import Forsaken.Util.MouseListener;
 
-import javax.swing.ImageIcon;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 
@@ -20,9 +21,9 @@ public class UIButton extends UIObject {
     public boolean isPressed() {
         boolean mouseDown = MouseListener.buttons[MouseListener.MouseButton.MOUSE_LEFT.ordinal()].pressed;
         if(mouseDown) {
-            System.out.println("Mouse position: " + MouseListener.getMousePosition() + " Rect bounds: " + sprite.transform);
+            System.out.println("Mouse pos: " + MouseListener.getMouseWindowPosition() + "button bounds: " + sprite.transform);
         }
-        return mouseDown && sprite.transform.contains(MouseListener.getMousePosition());
+        return mouseDown && sprite.transform.contains(MouseListener.getMouseWindowPosition());
     }
 
     @Override
