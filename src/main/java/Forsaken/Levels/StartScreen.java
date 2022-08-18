@@ -1,5 +1,6 @@
 package Forsaken.Levels;
 
+import Forsaken.GFX.Object;
 import Forsaken.GFX.Render;
 import Forsaken.GFX.Sprite;
 import Forsaken.GFX.UIButton;
@@ -32,5 +33,6 @@ public class StartScreen implements GameState {
 //        Render.sprites.add(new Sprite(new Rectangle(Global.screenWidth / 2 - Global.tileSize, Global.screenHeight / 2, Global.tileSize, Global.tileSize), button_1.getImageIcon()));
 //        Render.sprites.add(new Sprite(new Rectangle(Global.screenWidth / 2 - (Global.tileSize / 2), Global.screenHeight / 2, Global.tileSize, Global.tileSize), button_play.getImageIcon()));
         uiButton.render();
+        Render.objects.add(new Object(Object.ObjetType.RECT, uiButton.getBounds(), Color.BLUE));
     }
 }

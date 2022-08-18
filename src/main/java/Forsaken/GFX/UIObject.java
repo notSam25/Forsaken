@@ -7,6 +7,6 @@ public abstract class UIObject {
     // Once a UIObject is added in the GameState->render() function, it should handle all clicks and sounds in functions defined below.
     public abstract void render();
     public abstract boolean isPressed();
-
+    public abstract  Rectangle getBounds();
     public abstract void setPosition(Rectangle position);
 }

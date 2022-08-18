@@ -29,6 +29,7 @@ public class Render extends JPanel {
                     g.drawString(object.text, object.position.x, object.position.y);
                 }
                 case RECT: {
+                    g.setColor(object.color);
                     g.drawRect(object.position.x, object.position.y,object.position.width, object.position.height);
                 } break;
                 case FILLRECT: {

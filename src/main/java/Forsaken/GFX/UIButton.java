@@ -20,16 +20,18 @@ public class UIButton extends UIObject {
     @Override
     public boolean isPressed() {
         boolean mouseDown = MouseListener.buttons[MouseListener.MouseButton.MOUSE_LEFT.ordinal()].pressed;
-        if(mouseDown) {
-            System.out.println("Mouse pos: " + MouseListener.getMouseWindowPosition() + "button bounds: " + sprite.transform);
-        }
-        return mouseDown && sprite.transform.contains(MouseListener.getMouseWindowPosition());
+        Point pos = MouseListener.getMouseWindowPosition();
+        if(mouseDown)
+            System.out.println(pos + "button bounds: " + sprite.transform);
+
+        return mouseDown && sprite.transform.contains(pos);
     }
 
     @Override
     public void setPosition(Rectangle position) {
         sprite.transform = position;
     }
+    @Override public Rectangle getBounds() { return sprite.transform; }
 
     private final Sprite sprite;
 }
