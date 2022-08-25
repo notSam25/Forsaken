@@ -17,10 +17,11 @@ public class Window extends JFrame {
         this.setTitle(Global.windowName);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setResizable(false);
-
+        this.setLocation(new Point(Global.screenResolution.width / 5, Global.screenResolution.height / 5));
+        
+        this.setUndecorated(true);
         this.add(render);
         this.pack();
-        this.setLocation(new Point(Global.screenResolution.width / 4, Global.screenResolution.height / 4));
         this.setVisible(true);
 
         this.addMouseListener(MouseListener.getListener());

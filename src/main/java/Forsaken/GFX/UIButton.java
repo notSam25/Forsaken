@@ -1,11 +1,9 @@
 package Forsaken.GFX;
 
-import Forsaken.Global;
 import Forsaken.Util.MouseListener;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
 
 public class UIButton extends UIObject {
     public UIButton(Rectangle pos) {
@@ -36,8 +34,16 @@ public class UIButton extends UIObject {
 
     @Override
     public boolean contains(Rectangle transform, Point pos) {
-        return (pos.x >= transform.x && pos.x <= (transform.x + transform.width)) && (pos.y >= transform.y && pos.y <= (transform.y - transform.height));
+        return (pos.x >= transform.x && pos.x <= (transform.x + transform.width))
+                && (pos.y >= transform.y && pos.y <= (transform.y + transform.height));
     }
 
     private final Sprite sprite;
+
+    @Override
+    public boolean isDown() {
+        boolean mouseDown = MouseListener.buttons[MouseListener.MouseButton.MOUSE_LEFT.ordinal()].down;
+        Point pos = MouseListener.getMouseWindowPosition();
+        return mouseDown && contains(sprite.transform, pos);
+    }
 }
