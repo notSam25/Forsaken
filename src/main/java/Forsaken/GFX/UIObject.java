@@ -1,6 +1,6 @@
 package Forsaken.GFX;
 
-import java.awt.Rectangle;
+import java.awt.*;
 
 public abstract class UIObject {
     // Class for buttons, text boxes, sliders, etc...
@@ -9,4 +9,5 @@ public abstract class UIObject {
     public abstract boolean isPressed();
     public abstract  Rectangle getBounds();
     public abstract void setPosition(Rectangle position);
+    public abstract boolean contains(Rectangle transform, Point pos);
 }
