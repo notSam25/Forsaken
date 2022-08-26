@@ -6,7 +6,7 @@ public class Object {
 
     public ObjetType type = ObjetType.NONE;
 
-    public String text = "";
+    public String text;
     public Rectangle position;
     public Color color;
     public Font font;

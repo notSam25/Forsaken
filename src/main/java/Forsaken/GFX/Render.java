@@ -19,32 +19,37 @@ public class Render extends JPanel {
         // Gather all render data for the current level
         Global.gameState.render();
 
-        for(Object object : objects) {
-            switch(object.type) {
+        for (Object object : objects) {
+            switch (object.type) {
                 case NONE: {
                     System.out.println("Invalid object at: " + object);
-                } break;
+                }
+                    break;
                 case STRING: {
                     g.setFont(object.font);
                     g.drawString(object.text, object.position.x, object.position.y);
                 }
                 case RECT: {
                     g.setColor(object.color);
-                    g.drawRect(object.position.x, object.position.y,object.position.width, object.position.height);
-                } break;
+                    g.drawRect(object.position.x, object.position.y, object.position.width, object.position.height);
+                }
+                    break;
                 case FILLRECT: {
                     g.setColor(object.color);
-                    g.drawRect(object.position.x, object.position.y,object.position.width, object.position.height);
-                } break;
+                    g.drawRect(object.position.x, object.position.y, object.position.width, object.position.height);
+                }
+                    break;
                 case LINE: {
                     g.setColor(object.color);
-                    g.drawLine(object.position.x, object.position.y,object.position.width, object.position.height);
-                } break;
+                    g.drawLine(object.position.x, object.position.y, object.position.width, object.position.height);
+                }
+                    break;
             }
         }
 
         for (Sprite sprite : sprites) {
-            g.drawImage(sprite.getImage(), sprite.transform.x, sprite.transform.y, sprite.transform.width, sprite.transform.height, null);
+            g.drawImage(sprite.getImage(), sprite.transform.x, sprite.transform.y, sprite.transform.width,
+                    sprite.transform.height, null);
         }
 
         // Cleanup

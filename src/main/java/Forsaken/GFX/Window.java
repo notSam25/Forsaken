@@ -9,7 +9,7 @@ import java.awt.*;
 
 public class Window extends JFrame {
 
-    public static final Render render = new Render();
+    public final Render render = new Render();
     public void initWindow() {
         render.setPreferredSize(new Dimension(Global.screenWidth, Global.screenHeight));
         render.setDoubleBuffered(true);
