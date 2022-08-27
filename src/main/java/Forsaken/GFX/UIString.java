@@ -6,7 +6,7 @@ import javax.swing.ImageIcon;
 
 public class UIString extends UIObject {
     
-    public UIString(Object stringObject, ImageIcon imageIcon) {
+    public UIString(Geometry stringObject, ImageIcon imageIcon) {
         object = stringObject;
         if(imageIcon != null)
             sprite = new Sprite(object.position, imageIcon);
@@ -44,6 +44,6 @@ public class UIString extends UIObject {
         return false;
     }
     
-    private final Object object;
+    private final Geometry object;
     private Sprite sprite = new Sprite();
 }
