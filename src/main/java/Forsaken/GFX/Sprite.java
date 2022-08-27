@@ -5,13 +5,13 @@ import javax.swing.ImageIcon;
 
 public class Sprite {
     // X, Y, Width, Height
-    public Rectangle pos;
+    public Rectangle transform;
     public Image image;
     public ImageIcon imageIcon;
 
     public Sprite() {}
     public Sprite(Rectangle _pos, ImageIcon imageIcon) {
-        this.pos = _pos;
+        this.transform = _pos;
         setImage(imageIcon);
     }
 

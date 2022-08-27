@@ -1,11 +1,18 @@
 package Forsaken.Util;
 
-import java.awt.Point;
+import Forsaken.Global;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.*;
 
 public class MouseListener {
-
-    public static final Button[] buttons = new Button[100];
+    public enum  MouseButton {
+        MOUSE_LEFT,
+        MOUSE_MIDDLE,
+        MOUSE_RIGHT
+    }
+    public static final Button[] buttons = new Button[3];
 
     static {
         for (int i = 0; i < buttons.length; i++) {
@@ -13,20 +20,28 @@ public class MouseListener {
         }
     }
 
+    private static Point mousePosition;
+    public static Point getMouseScreenPosition() {
+        return mousePosition;
+    }
+
+    public static Point getMouseWindowPosition() {
+        Point mousePos = mousePosition;
+        SwingUtilities.convertPointFromScreen(mousePos, Global.window);
+        return mousePos;
+    }
+
     public static void update() {
         for (Button button : buttons) {
             button.pressed = button.down && !button.last;
             button.last = button.down;
         }
+
+        mousePosition = MouseInfo.getPointerInfo().getLocation();
     }
 
     public static class Button {
         public boolean down, pressed, pressedTick, last;
-        public Point position;
-    }
-
-    public static int GetKey(char key) {
-        return KeyEvent.getExtendedKeyCodeForChar(key);
     }
 
     public static java.awt.event.MouseListener getListener() {
@@ -39,16 +54,12 @@ public class MouseListener {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                MouseListener.buttons[e.getButton()].position = e.getPoint();
-
-                MouseListener.buttons[e.getButton()].down = true;
+                MouseListener.buttons[e.getButton() - 1].down = true;
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                MouseListener.buttons[e.getButton()].position = e.getPoint();
-
-                MouseListener.buttons[e.getButton()].down = false;
+                MouseListener.buttons[e.getButton() - 1].down = false;
             }
 
             @Override
